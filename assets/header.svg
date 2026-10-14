@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240" role="img" aria-label="Hi, I'm Eli Gutovsky — Senior Backend Engineer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="25%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="75%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;900 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    </pattern>
+    <clipPath id="card"><rect width="900" height="240" rx="16"/></clipPath>
+
+    <!-- typing reveal masks: 12s loop, each line owns a 4s window -->
+    <clipPath id="type1"><rect x="60" y="150" height="40" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        keyTimes="0;0.125;0.29;0.333;1" values="0;330;330;0;0"/></rect></clipPath>
+    <clipPath id="type2"><rect x="60" y="150" height="40" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        keyTimes="0;0.333;0.458;0.625;0.667;1" values="0;0;436;436;0;0"/></rect></clipPath>
+    <clipPath id="type3"><rect x="60" y="150" height="40" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        keyTimes="0;0.667;0.792;0.958;1" values="0;0;488;488;0"/></rect></clipPath>
+  </defs>
+
+  <style>
+    .title { font: 700 52px 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .mono  { font: 400 22px 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace; fill: #c9d1d9; }
+    .prompt { fill: #34d399; }
+    .hand {
+      font-size: 48px;
+      transform-box: fill-box;
+      transform-origin: 70% 80%;
+      animation: wave 2.4s ease-in-out infinite;
+    }
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+    }
+    .fade-in { opacity: 0; animation: fadeUp 1s ease-out forwards; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cursor { fill: #22d3ee; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .dot { fill: #22d3ee; animation: float 8s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.15; }
+      50% { transform: translateY(-18px); opacity: 0.7; }
+    }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="900" height="240" fill="url(#bg)"/>
+    <rect width="900" height="240" fill="url(#grid)" opacity="0.5"/>
+
+    <!-- floating particles -->
+    <circle class="dot" cx="620" cy="60"  r="2.5" style="animation-delay:0s"/>
+    <circle class="dot" cx="700" cy="140" r="1.8" style="animation-delay:1.5s"/>
+    <circle class="dot" cx="780" cy="80"  r="3"   style="animation-delay:3s"/>
+    <circle class="dot" cx="840" cy="180" r="2"   style="animation-delay:4.5s"/>
+    <circle class="dot" cx="560" cy="200" r="1.5" style="animation-delay:2.2s"/>
+    <circle class="dot" cx="860" cy="40"  r="1.6" style="animation-delay:5.5s"/>
+    <circle class="dot" cx="740" cy="210" r="2.2" style="animation-delay:6.5s"/>
+
+    <!-- scanning beam along the bottom edge -->
+    <rect y="236" width="240" height="4" fill="url(#beam)">
+      <animate attributeName="x" values="-240;900" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="0.5" y="0.5" width="899" height="239" rx="16" fill="none" stroke="#30363d"/>
+
+  <!-- headline -->
+  <g class="fade-in">
+    <text x="60" y="110" class="title" fill="url(#title)">Hi, I'm Eli Gutovsky</text>
+    <text x="560" y="108" class="hand">👋</text>
+  </g>
+
+  <!-- typing subtitle -->
+  <g class="mono">
+    <text x="60" y="178" clip-path="url(#type1)"><tspan class="prompt">&gt;</tspan> Senior Backend Engineer</text>
+    <text x="60" y="178" clip-path="url(#type2)"><tspan class="prompt">&gt;</tspan> .NET · Go · TypeScript · NestJS</text>
+    <text x="60" y="178" clip-path="url(#type3)"><tspan class="prompt">&gt;</tspan> Building real-time decision engines</text>
+  </g>
+  <rect class="cursor" x="60" y="160" width="11" height="24">
+    <animate attributeName="x" dur="12s" repeatCount="indefinite"
+      keyTimes="0;0.125;0.29;0.333;0.458;0.625;0.667;0.792;0.958;1"
+      values="62;392;392;62;498;498;62;550;550;62"/>
+  </rect>
+</svg>

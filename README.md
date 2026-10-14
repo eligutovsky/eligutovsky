@@ -1,4 +1,6 @@
-### Hi there 👋
+<p align="center">
+  <img src="./assets/header.svg" alt="Hi, I'm Eli Gutovsky — Senior Backend Engineer" width="100%">
+</p>
 
 <!--
 **eligutovsky/eligutovsky** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
