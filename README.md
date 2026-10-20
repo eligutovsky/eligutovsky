@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/header.svg" alt="Hi, I'm Eli Gutovsky — Senior Software Engineer" width="100%">
+  <img src="./assets/header.svg" alt="Hi, I'm Eli Gutovsky" width="100%">
 </p>
 
 <!--
